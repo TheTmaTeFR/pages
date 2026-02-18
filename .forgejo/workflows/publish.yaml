@@ -12,6 +12,7 @@ jobs:
           cp *.html _site/
       - uses: actions/git-pages@v2
         with:
-          site: https://username.codeberg.page/
-          token: ${{ secrets.GIT_PAGES_TOKEN }}
+          site: https://example.org/
+          server: grebedoc.dev
+          password: ${{ secrets.SITE_PASSWORD }}
           source: _site/
