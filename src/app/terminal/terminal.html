@@ -1,0 +1,29 @@
+<div class="terminal">
+<div class="terminal-header">
+  <pre class="ascii-art">
+   m                  ""#           mmmmmm mmmmmm
+ mm#mm  m   m   mmm     #    m   m      #"     #"
+   #    "m m"  #"  #    #    #   #     m"     m"
+   #     #m#   #""""    #    #   #    m"     m"
+   "mm    #    "#mm"    "mm  "mm"#   m"     m"
+  </pre>
+</div>
+  <div class="terminal-output" #output>
+    @for (line of outputLines(); track $index) {
+      <div [innerHTML]="line"></div>
+    }
+  </div>
+  @if (!isSystemTyping()) {
+    <div class="terminal-input">
+      <span>> </span>
+      <input
+        #input
+        type="text"
+        [(ngModel)]="currentInput"
+        (keyup.enter)="onEnter()"
+        (keydown)="onKeyDown($event)"
+        autofocus
+      />
+    </div>
+  }
+</div>
