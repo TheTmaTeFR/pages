@@ -23,7 +23,7 @@ jobs:
         run: npm run build -- --configuration production
 
       - name: Deploy to Codeberg Pages
-        uses: git-pages/action@v2
+        uses: actions/git-pages@v2
         with:
           site: https://tvelu77.codeberg.page/
           token: ${{ secrets.GIT_PAGES_TOKEN }}
