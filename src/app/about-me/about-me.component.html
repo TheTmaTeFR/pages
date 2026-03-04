@@ -1,0 +1,84 @@
+<div class="about-me-container">
+  <div class="hero-header">
+    <div class="photo-frame">
+      <img
+        src="images/1761419483783.jpeg"
+        alt="Thomas VELU – Architecte Logiciel"
+        class="profile-photo"
+        loading="lazy" />
+    </div>
+
+    <div class="title-block">
+      <h1>Thomas VELU</h1>
+      <h2>Ingénieur logiciel</h2>
+      <p class="tagline">
+        Passionné par l'élégance du code et l'architecture logicielle intemporelle.
+      </p>
+    </div>
+  </div>
+
+  <p-card class="section-card about-card">
+    <ng-template pTemplate="header">
+      <h3 class="section-title">À Propos</h3>
+    </ng-template>
+    <p class="about-text">
+      Avec une solide expérience en développement Java et une touche d'Angular, je navigue avec aisance entre les défis technologiques de nombreux secteurs.
+      <br>
+      Curieux et toujours en veille technologique, j'aime explorer les dernières tendances pour rester à la pointe de l'innovation.
+      <br>
+      Mon adaptabilité et mon esprit d'équipe me permettent de m'intégrer rapidement et de contribuer efficacement dans des environnements Agile.
+      <br>
+      Prêt à relever de nouveaux défis et à partager mes connaissances, je suis ouvert aux échanges et aux collaborations enrichissantes.
+    </p>
+  </p-card>
+
+  <p-card class="section-card">
+    <ng-template pTemplate="header">
+      <h3 class="section-title">Parcours Académique</h3>
+    </ng-template>
+    <p-timeline [value]="academicPath()" align="alternate" styleClass="custom-timeline">
+      <ng-template pTemplate="content" let-item>
+        <p-card class="timeline-item">
+          <div class="timeline-year">{{ item.year }}</div>
+          <h4>{{ item.title }}</h4>
+          <p class="timeline-institution">{{ item.location }}</p>
+          <p class="timeline-description">{{ item.description }}</p>
+        </p-card>
+      </ng-template>
+    </p-timeline>
+  </p-card>
+
+
+  <p-card class="section-card">
+    <ng-template pTemplate="header">
+      <h3 class="section-title">Parcours Professionnel</h3>
+    </ng-template>
+    <p-timeline [value]="professionalPath()" align="alternate" styleClass="custom-timeline">
+      <ng-template pTemplate="content" let-item>
+        <p-card class="timeline-item">
+          <div class="timeline-year">{{ item.year }}</div>
+          <h4>{{ item.title }}</h4>
+          <p class="timeline-institution">{{ item.location }}</p>
+          <p class="timeline-description">{{ item.description }}</p>
+        </p-card>
+      </ng-template>
+    </p-timeline>
+  </p-card>
+
+  <p-card class="section-card skills-card">
+    <ng-template pTemplate="header">
+      <h3 class="section-title">Compétences Clés</h3>
+    </ng-template>
+    <div class="skills-container">
+      @for (skill of skills(); track skill.name) {
+        <div class="skill-item">
+          <div class="skill-name">{{ skill.name }}</div>
+          <p-progressBar
+            [value]="skill.level"
+            [style]="{ height: '8px' }"
+            styleClass="custom-progress" />
+        </div>
+      }
+    </div>
+  </p-card>
+</div>

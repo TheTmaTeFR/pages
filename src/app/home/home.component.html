@@ -1,0 +1,20 @@
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+        <h1 class="hero-title">{{ name() }}</h1>
+        <h2 class="hero-subtitle">{{ title() }}</h2>
+        <p class="hero-tagline">{{ tagline() }}</p>
+
+        <div class="hero-actions">
+            <a routerLink="/projects" pButton severity="secondary"
+                styleClass="hero-btn primary" [outlined]="false">
+                <span pButtonLabel>Découvrir mes projets</span>
+            </a>
+            <a routerLink="/about-me" pButton severity="secondary" styleClass="hero-btn secondary"
+                [outlined]="true">
+                <span pButtonLabel>Qui suis-je ?</span>
+            </a>
+        </div>
+    </div>
+</section>

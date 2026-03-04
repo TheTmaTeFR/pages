@@ -1,0 +1,59 @@
+<section class="section projects-section">
+    <div class="container">
+        <h2>Mes Projets</h2>
+
+        <p-dataview [value]="projects()" layout="grid" [rows]="6" [paginator]="projects().length > 6"
+            paginatorPosition="bottom" class="projects-dataview">
+
+            <ng-template let-projects #grid>
+                <div class="projects-grid">
+                    @for (project of projects; track project.title) {
+                    <div class="project-item">
+                        <p-card [header]="project.title" subheader="{{ project.year }}" class="project-card"
+                            [style]="{ width: '100%' }">
+
+                            <ng-template pTemplate="header">
+                                <div class="image-wrapper">
+                                    <img [src]="project.image" [alt]="project.title + ' – Aperçu'" class="project-image"
+                                        loading="lazy" />
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </ng-template>
+
+                            <div class="project-body">
+                                <p class="project-description">
+                                    {{ project.description }}
+                                </p>
+
+                                <div class="tech-tags">
+                                    @for (tech of project.technologies; track tech) {
+                                    <span class="tech-tag">{{ tech }}</span>
+                                    }
+                                </div>
+                            </div>
+
+                            <ng-template pTemplate="footer">
+                                @if (project.link) {
+                                <div class="footer-actions">
+                                  <p-button
+                                    label="Découvrir"
+                                    icon="pi pi-arrow-right"
+                                    [outlined]="true"
+                                    severity="secondary"
+                                    styleClass="project-btn"
+                                    (onClick)="openLink(project.link)" />
+                                </div>
+                                }
+                            </ng-template>
+                        </p-card>
+                    </div>
+                    }
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="emptymessage">
+                <div class="empty-message">Aucune réalisation à présenter pour le moment.</div>
+            </ng-template>
+        </p-dataview>
+    </div>
+</section>
