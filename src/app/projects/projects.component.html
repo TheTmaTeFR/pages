@@ -14,9 +14,11 @@
 
                             <ng-template pTemplate="header">
                                 <div class="image-wrapper">
+                                  @if (project.image) {
                                     <img [src]="project.image" [alt]="project.title + ' – Aperçu'" class="project-image"
-                                        loading="lazy" />
+                                      loading="lazy" />
                                     <div class="image-overlay"></div>
+                                  }
                                 </div>
                             </ng-template>
 
