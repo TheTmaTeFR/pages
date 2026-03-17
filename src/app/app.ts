@@ -1,6 +1,7 @@
-import { Component, signal, } from '@angular/core';
+import { Component, inject, signal, } from '@angular/core';
 import { MenubarComponent } from './menubar/menubar.component';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
+
   protected readonly title = signal('tvelu77.frama.io');
+
+  private translate = inject(TranslateService);
+  
+  constructor() {
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setFallbackLang('en');
+    this.translate.use('en');
+  }
 }

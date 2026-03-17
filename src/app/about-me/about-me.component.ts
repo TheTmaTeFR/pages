@@ -4,10 +4,11 @@ import { TimelineModule } from 'primeng/timeline';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { Experience } from './data/experience';
 import { Skill } from './data/skill';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'about-me',
-  imports: [CardModule, TimelineModule, ProgressBarModule],
+  imports: [CardModule, TimelineModule, ProgressBarModule, TranslatePipe],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',
 })

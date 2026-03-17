@@ -5,10 +5,11 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DataViewModule } from 'primeng/dataview';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'projects',
-  imports: [CommonModule, DataViewModule, CardModule, ButtonModule, TagModule],
+  imports: [CommonModule, DataViewModule, CardModule, ButtonModule, TagModule, TranslatePipe],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })

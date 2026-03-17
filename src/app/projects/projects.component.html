@@ -1,6 +1,6 @@
 <section class="section projects-section">
     <div class="container">
-        <h2>Mes Projets</h2>
+        <h2>{{ 'projects.title' | translate }}</h2>
 
         <p-dataview [value]="projects()" layout="grid" [rows]="6" [paginator]="projects().length > 6"
             paginatorPosition="bottom" class="projects-dataview">
