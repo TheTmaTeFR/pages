@@ -23,7 +23,7 @@ export class MenubarComponent {
   readonly aboutLabel = this._aboutLabel.asReadonly();
   readonly projectsLabel = this._projectsLabel.asReadonly();
   
-  readonly selectedLanguage = signal(this.translate.getCurrentLang());
+  readonly selectedLanguage = signal(this.translate.getBrowserLang() ?? this.translate.getFallbackLang());
   readonly languages = [
     { flag: '🇫🇷', code: 'fr' },
     { flag: '🇬🇧', code: 'en' },
