@@ -38,7 +38,7 @@
                                 @if (project.link) {
                                 <div class="footer-actions">
                                   <p-button
-                                    label="Découvrir"
+                                    label="{{ 'projects.seeMore' | translate }}"
                                     icon="pi pi-arrow-right"
                                     [outlined]="true"
                                     severity="secondary"
@@ -54,7 +54,7 @@
             </ng-template>
 
             <ng-template pTemplate="emptymessage">
-                <div class="empty-message">Aucune réalisation à présenter pour le moment.</div>
+                <div class="empty-message">{{ 'projects.empty' | translate }}</div>
             </ng-template>
         </p-dataview>
     </div>
