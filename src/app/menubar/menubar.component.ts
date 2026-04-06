@@ -18,10 +18,12 @@ export class MenubarComponent {
   private readonly _homeLabel = signal('');
   private readonly _aboutLabel = signal('');
   private readonly _projectsLabel = signal('');
+  private readonly _blogLabel = signal('');
 
   readonly homeLabel = this._homeLabel.asReadonly();
   readonly aboutLabel = this._aboutLabel.asReadonly();
   readonly projectsLabel = this._projectsLabel.asReadonly();
+  readonly blogLabel = this._blogLabel.asReadonly();
   
   readonly selectedLanguage = signal(this.translate.getBrowserLang() ?? this.translate.getFallbackLang());
   readonly languages = [
@@ -44,6 +46,11 @@ export class MenubarComponent {
       label: this.projectsLabel(),
       routerLink: '/projects',
       icon: 'pi pi-folder'
+    },
+    {
+      label: this._blogLabel(),
+      routerLink: '/blog',
+      icon: 'pi pi-comments'
     }
   ]));
 
@@ -72,5 +79,6 @@ export class MenubarComponent {
     this.translate.get('menu.home').subscribe((res) => this._homeLabel.set(res));
     this.translate.get('menu.about').subscribe((res) => this._aboutLabel.set(res));
     this.translate.get('menu.projects').subscribe((res) => this._projectsLabel.set(res));
+    this.translate.get('menu.blog').subscribe((res) => this._blogLabel.set(res));
   }
 }

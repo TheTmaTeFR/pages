@@ -22,7 +22,8 @@
     "menu": {
         "home": "Home",
         "about": "About",
-        "projects": "Projects"
+        "projects": "Projects",
+        "blog": "Blog"
     },
     "projects": {
         "title": "My projects",

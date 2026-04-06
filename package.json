@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate-blog-list": "node src/scripts/generate-blog-list.js"
   },
   "prettier": {
     "printWidth": 100,
@@ -29,6 +30,7 @@
     "@angular/router": "^21.1.5",
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
+    "ngx-markdown": "^21.1.0",
     "primeng": "^21.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
