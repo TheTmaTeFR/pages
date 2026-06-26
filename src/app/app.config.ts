@@ -5,7 +5,6 @@ import { provideTranslateService } from '@ngx-translate/core';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideMarkdown } from 'ngx-markdown';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +21,5 @@ export const appConfig: ApplicationConfig = {
       lang: 'en'
     }),
     provideMarkdown(),
-    provideAnimationsAsync(),
   ]
 };
