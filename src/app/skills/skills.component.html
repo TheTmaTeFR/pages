@@ -1,0 +1,36 @@
+<section class="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2>Compétences</h2>
+      <p class="section-subtitle">Ce que je maîtrise</p>
+    </div>
+
+    <div class="skills-content">
+      @for (category of categories; track $index) {
+        <div class="skill-category">
+          <div class="category-header">
+            <span class="category-icon">{{ category.icon }}</span>
+            <h3>{{ category.name }}</h3>
+          </div>
+
+          <div class="skills-list">
+            @for (skill of category.skills; track $index) {
+              <div class="skill-item">
+                <div class="skill-info">
+                  <h4>{{ skill.name }}</h4>
+                  <p>{{ skill.description }}</p>
+                </div>
+                <div class="skill-level">
+                  <div class="level-bar">
+                    <div class="level-fill" [style.width.%]="skill.level"></div>
+                  </div>
+                  <span class="level-text">{{ skill.level }}%</span>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>Thomas VELU</h3>
+        <p>
+          Développeur Java/Spring Boot passionné par la création d'applications robustes et
+          performantes.
+        </p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Liens rapides</h3>
+        <ul>
+          @for (link of links; track $index) {
+            <li>
+              <a [routerLink]="link.path">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="footer-section social">
+        <h3>Réseaux sociaux</h3>
+        <div class="social-icons">
+          @for (link of socialLinks; track $index) {
+            <a
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="link.label"
+            >
+              <span>{{ link.icon }}</span>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Thomas VELU. Tous droits réservés.</p>
+      <p>Créé avec ❤️ et Angular</p>
+    </div>
+  </div>
+</footer>

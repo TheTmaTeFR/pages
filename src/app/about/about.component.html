@@ -1,0 +1,44 @@
+<section class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>À propos de moi</h2>
+      <p class="section-subtitle">Mon parcours et mes motivations</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>{{ aboutText }}</p>
+      </div>
+
+      <div class="about-details">
+        <div class="education">
+          <h3>Formation</h3>
+          @for (edu of education; track $index) {
+            <div class="education-item">
+              <div class="education-header">
+                <h4>{{ edu.degree }}</h4>
+                <span class="education-year">{{ edu.year }}</span>
+              </div>
+              <p class="education-institution">{{ edu.institution }}</p>
+              <p class="education-description">{{ edu.description }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="experience">
+          <h3>Expérience Professionnelle</h3>
+          @for (exp of experience; track $index) {
+            <div class="experience-item">
+              <div class="experience-header">
+                <h4>{{ exp.position }}</h4>
+                <span class="experience-period">{{ exp.period }}</span>
+              </div>
+              <p class="experience-company">{{ exp.company }}</p>
+              <p class="experience-description">{{ exp.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,50 @@
-<p>terminal works!</p>
+<div class="terminal-overlay" (click)="onClose()">
+  <div class="terminal-container" (click)="$event.stopPropagation()">
+    <div class="terminal-header">
+      <div class="terminal-header-left">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+      </div>
+      <div class="terminal-header-center">
+        <span>Terminal - Thomas VELU</span>
+      </div>
+      <div class="terminal-header-right">
+        <button class="terminal-close" (click)="onClose()">×</button>
+      </div>
+    </div>
+
+    <div class="terminal-body">
+      <div class="terminal-output-container">
+        @for (cmd of commands; track $index) {
+          <div class="terminal-command">
+            @if (cmd.command) {
+              <div class="terminal-input-line">
+                <span class="terminal-prompt">user@thomas-velu:~$</span>
+                <span class="terminal-input">{{ cmd.command }}</span>
+              </div>
+            }
+            <div class="terminal-output">{{ cmd.output }}</div>
+          </div>
+        }
+
+        <div class="terminal-input-line current">
+          <span class="terminal-prompt">user@thomas-velu:~$</span>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="terminal-form">
+            <input
+              formControlName="input"
+              type="text"
+              class="terminal-input-field"
+              autocomplete="off"
+              (keydown)="onKeydown($event)"
+              placeholder=""
+            />
+          </form>
+          @if (showCursor) {
+            <span class="terminal-cursor">|</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

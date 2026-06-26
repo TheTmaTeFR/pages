@@ -6,7 +6,6 @@
 
 <app-footer></app-footer>
 
-<app-terminal
-  *ngIf="showTerminal"
-  (close)="closeTerminal()"
-></app-terminal>
+@if (showTerminal) {
+  <app-terminal (close)="closeTerminal()"></app-terminal>
+}

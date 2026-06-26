@@ -1,0 +1,74 @@
+<section class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <p class="section-subtitle">Restons en contact</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Mes coordonnées</h3>
+        <p>
+          N'hésitez pas à me contacter pour discuter d'un projet, d'une collaboration ou simplement
+          pour échanger.
+        </p>
+
+        <div class="info-list">
+          @for (info of contactInfo; track $index) {
+            <div class="info-item">
+              <span class="info-icon">{{ info.icon }}</span>
+              <div class="info-content">
+                <span class="info-type">{{ info.type }}</span>
+                @if (info.link) {
+                  <a
+                    [href]="info.link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="info-value"
+                  >
+                    {{ info.value }}
+                  </a>
+                } @else {
+                  <span class="info-value">{{ info.value }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="social-links">
+          <h4>Réseaux sociaux</h4>
+          <div class="social-icons">
+            <a
+              href="https://github.com/tvelu77"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="GitHub"
+            >
+              🐙
+            </a>
+            <a
+              href="https://codeberg.org/tvelu77"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Codeberg"
+            >
+              🔷
+            </a>
+            <a
+              href="https://www.linkedin.com/in/thomas-velu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="LinkedIn"
+            >
+              🔗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

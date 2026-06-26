@@ -1,0 +1,67 @@
+<section class="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2>Projets</h2>
+      <p class="section-subtitle">Mes réalisations</p>
+    </div>
+
+    <div class="projects-filter">
+      <button class="filter-btn" [class.active]="filter === 'all'" (click)="filterProjects('all')">
+        Tous les projets
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="filter === 'featured'"
+        (click)="filterProjects('featured')"
+      >
+        Projets mis en avant
+      </button>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of filteredProjects; track $index) {
+        <div class="project-image">
+          @if (!project.image) {
+            <div class="image-placeholder">
+              <span>💻</span>
+            </div>
+          } @else {
+            <img [src]="project.image" alt="{{ project.title }}" />
+          }
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>{{ project.title }}</h3>
+            <div class="project-badges">
+              @if (project.featured) {
+                <span class="badge featured">Mis en avant</span>
+              }
+              @if (project.githubUrl) {
+                <span class="badge github">
+                  <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">Code</a>
+                </span>
+              }
+              @if (project.demoUrl) {
+                <span class="badge demo">
+                  <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer">Demo</a>
+                </span>
+              }
+            </div>
+          </div>
+
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-technologies">
+            @for (tech of project.technologies; track $index) {
+              <span class="tech-tag">
+                <span class="tech-icon">{{ getIcon(tech) }}</span>
+                <span class="tech-name">{{ tech }}</span>
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

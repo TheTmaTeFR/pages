@@ -1,41 +1,42 @@
 <header class="header">
-    <div class="container header-container">
-      <a href="/accueil" class="logo">
-        <span class="logo-text">Thomas VELU</span>
-      </a>
-      
-      <nav class="nav-desktop">
-        <ul class="nav-list">
-            @for (item of navItems; track $index) {
-                <li class="nav-item">
-                    <a [routerLink]="item.path" routerLinkActive="active" class="nav-link">
-                        <span class="nav-icon">{{ item.icon }}</span>
-                        <span class="nav-label">{{ item.label }}</span>
-                      </a>
-                </li>
-            }
-        </ul>
-      </nav>
-      
-      <div class="social-links">
-        @for (link of socialLinks; track $index) {
-            <a
-                [href]="link.url" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="social-link"
-                [attr.aria-label]="link.label">
-            <span class="social-icon">{{ getIcon(link.icon) }}</span>
-         </a>
+  <div class="container header-container">
+    <a href="/accueil" class="logo">
+      <span class="logo-text">Thomas VELU</span>
+    </a>
+
+    <nav class="nav-desktop">
+      <ul class="nav-list">
+        @for (item of navItems; track $index) {
+          <li class="nav-item">
+            <a [routerLink]="item.path" routerLinkActive="active" class="nav-link">
+              <span class="nav-icon">{{ item.icon }}</span>
+              <span class="nav-label">{{ item.label }}</span>
+            </a>
+          </li>
         }
-      </div>
-      
-      <button class="terminal-btn" (click)="onToggleTerminal()" aria-label="Ouvrir le terminal">
-        <span>🖥️ Terminal</span>
-      </button>
-      
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span>☰</span>
-      </button>
+      </ul>
+    </nav>
+
+    <div class="social-links">
+      @for (link of socialLinks; track $index) {
+        <a
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+          [attr.aria-label]="link.label"
+        >
+          <span class="social-icon">{{ getIcon(link.icon) }}</span>
+        </a>
+      }
     </div>
-  </header>
+
+    <button class="terminal-btn" (click)="onToggleTerminal()" aria-label="Ouvrir le terminal">
+      <span>🖥️ Terminal</span>
+    </button>
+
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <span>☰</span>
+    </button>
+  </div>
+</header>

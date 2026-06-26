@@ -1,0 +1,48 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-intro" @fadeIn>
+        <span class="hero-greeting">Bonjour, je suis</span>
+        <h1 class="hero-title">Thomas VELU</h1>
+      </div>
+
+      <div class="hero-subtitle" @fadeIn>
+        <span class="typewriter-container">
+          <span class="typewriter-text">{{ typedText }}</span>
+          @if (showCursor) {
+            <span class="typewriter-cursor">|</span>
+          }
+        </span>
+      </div>
+
+      <p class="hero-description" @fadeIn>
+        Je conçois et développe des applications backend robustes avec Spring Boot, et des
+        interfaces utilisateur modernes avec Angular. Mon approche allie performance, maintenabilité
+        et expérience utilisateur.
+      </p>
+
+      <div class="hero-actions" @fadeIn>
+        <a href="/projects" class="btn">Voir mes projets</a>
+        <a href="/contact" class="btn btn-outline">Me contacter</a>
+      </div>
+
+      <div class="hero-stats" @fadeIn>
+        @for (stat of stats; track $index) {
+          <div class="stat-item">
+            <span class="stat-icon">{{ stat.icon }}</span>
+            <div class="stat-content">
+              <span class="stat-value">{{ stat.value }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="hero-image" @fadeIn>
+      <div class="image-placeholder">
+        <span>👨‍💻</span>
+      </div>
+    </div>
+  </div>
+</section>

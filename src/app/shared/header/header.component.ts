@@ -8,20 +8,19 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-
   @Output() toggleTerminal = new EventEmitter<void>();
 
   navItems = [
-    { path: '/accueil', label: 'Accueil', icon: '🏠' },
-    { path: '/projets', label: 'Projets', icon: '💻' },
-    { path: '/competences', label: 'Compétences', icon: '🛠️' },
-    { path: '/contact', label: 'Contact', icon: '📧' }
+    { path: '/home', label: 'Accueil', icon: '🏠' },
+    { path: '/projects', label: 'Projets', icon: '💻' },
+    { path: '/skills', label: 'Compétences', icon: '🛠️' },
+    { path: '/contact', label: 'Contact', icon: '📧' },
   ];
 
   socialLinks = [
     { url: 'https://github.com/TheTmaTeFR', icon: 'github', label: 'GitHub' },
     { url: 'https://codeberg.org/TheTmaTe', icon: 'codeberg', label: 'Codeberg' },
-    { url: 'https://www.linkedin.com/in/thomas-velu/', icon: 'linkedin', label: 'LinkedIn' }
+    { url: 'https://www.linkedin.com/in/thomas-velu/', icon: 'linkedin', label: 'LinkedIn' },
   ];
 
   onToggleTerminal(): void {
@@ -32,9 +31,8 @@ export class HeaderComponent {
     const icons: Record<string, string> = {
       github: '🐙',
       codeberg: '🔷',
-      linkedin: '🔗'
+      linkedin: '🔗',
     };
     return icons[icon] || '🔗';
   }
-
 }
