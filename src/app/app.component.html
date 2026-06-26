@@ -1,0 +1,12 @@
+<app-header (toggleTerminal)="toggleTerminal()"></app-header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
+
+<app-terminal
+  *ngIf="showTerminal"
+  (close)="closeTerminal()"
+></app-terminal>
