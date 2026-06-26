@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -25,6 +26,15 @@ export class HeaderComponent {
 
   onToggleTerminal(): void {
     this.toggleTerminal.emit();
+  }
+
+  getIcon(icon: string): string {
+    const icons: Record<string, string> = {
+      github: '🐙',
+      codeberg: '🔷',
+      linkedin: '🔗'
+    };
+    return icons[icon] || '🔗';
   }
 
 }
