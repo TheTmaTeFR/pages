@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span class="logo">Thomas Velu</span>
+  
+  <!-- Desktop Menu -->
+  <span class="desktop-menu">
+    @for (item of navItems; track item.label) {
+      <a [routerLink]="item.link" mat-button>
+        {{ item.label }}
+      </a>
+    }
+  </span>
+
+  <!-- Mobile Menu -->
+  <span class="mobile-menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      @for (item of navItems; track item.label) {
+        <a [routerLink]="item.link" mat-menu-item>
+          <mat-icon>{{ getIcon(item.label) }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </mat-menu>
+  </span>
+
+  <!-- Theme Toggle -->
+  <span class="theme-toggle">
+    <mat-slide-toggle
+      [checked]="isDarkTheme"
+      (change)="toggleTheme()"
+      color="accent"
+      [aria-label]="'Toggle theme'"
+    >
+      <mat-icon matPrefix>brightness_6</mat-icon>
+      <mat-icon matSuffix>brightness_2</mat-icon>
+    </mat-slide-toggle>
+  </span>
+</mat-toolbar>

@@ -1,0 +1,58 @@
+<section class="about section">
+  <div class="container">
+    <h2 class="section-title fade-in">À propos de moi</h2>
+
+    <!-- About Text -->
+    <mat-card class="about-card fade-in">
+      <mat-card-content>
+        <p class="about-text">{{ aboutText }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Experience -->
+    <mat-card class="experience-card fade-in" [style.animation-delay]="'0.1s'">
+      <mat-card-header>
+        <mat-card-title>Expérience Professionnelle</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          @for (experience of experiences; track experience.title) {
+            <mat-list-item>
+              <mat-icon matListIcon svgIcon="{{ experience.icon }}"></mat-icon>
+              <div matLine class="experience-header">
+                <h4>{{ experience.title }}</h4>
+                <span class="company">{{ experience.company }}</span>
+              </div>
+              <span matLine class="period">{{ experience.period }}</span>
+              <p matLine class="description">{{ experience.description }}</p>
+              <mat-divider></mat-divider>
+            </mat-list-item>
+          }
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Education -->
+    <mat-card class="education-card fade-in" [style.animation-delay]="'0.2s'">
+      <mat-card-header>
+        <mat-card-title>Formation</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          @for (edu of education; track edu.degree) {
+            <mat-list-item>
+              <mat-icon matListIcon>school</mat-icon>
+              <div matLine class="education-header">
+                <h4>{{ edu.degree }}</h4>
+                <span class="school">{{ edu.school }}</span>
+              </div>
+              <span matLine class="period">{{ edu.period }}</span>
+              <p matLine class="description">{{ edu.description }}</p>
+              <mat-divider></mat-divider>
+            </mat-list-item>
+          }
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

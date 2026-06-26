@@ -1,0 +1,55 @@
+<section class="contact section">
+  <div class="container">
+    <h2 class="section-title fade-in">Contactez-moi</h2>
+    <p class="section-subtitle fade-in">N'hésitez pas à me contacter pour toute question ou collaboration.</p>
+
+    <div class="contact-container">
+      <!-- Social Links -->
+      <mat-card class="social-card fade-in">
+        <mat-card-header>
+          <mat-card-title>Mes Réseaux</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="social-links">
+            @for (social of socialLinks; track social.label) {
+              <a [href]="social.url" target="_blank" rel="noopener noreferrer" mat-raised-button color="accent">
+                <mat-icon svgIcon="{{ social.icon }}"></mat-icon>
+                <span>{{ social.label }}</span>
+              </a>
+            }
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Contact Form -->
+      <mat-card class="form-card fade-in" [style.animation-delay]="'0.1s'">
+        <mat-card-header>
+          <mat-card-title>Envoyez-moi un message</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form (ngSubmit)="onSubmit()" class="contact-form">
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Nom</mat-label>
+              <input matInput [(ngModel)]="contactForm.name" name="name" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput [(ngModel)]="contactForm.email" name="email" type="email" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Message</mat-label>
+              <textarea matInput [(ngModel)]="contactForm.message" name="message" rows="5" required></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" class="submit-button">
+              <mat-icon>send</mat-icon>
+              Envoyer
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

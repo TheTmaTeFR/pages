@@ -1,0 +1,29 @@
+<section class="skills section">
+  <div class="container">
+    <h2 class="section-title fade-in">Mes Compétences</h2>
+    <p class="section-subtitle fade-in">Voici les technologies et outils que je maîtrise.</p>
+
+    <div class="skills-container">
+      @for (category of skillCategories; track category.category) {
+        <div class="skill-category fade-in" [style.animation-delay]="getAnimationDelay(category.category)">
+          <h3>{{ category.category }}</h3>
+          <div class="skills-list">
+            @for (skill of category.skills; track skill.name) {
+              <div class="skill-item" [matTooltip]="'Niveau: ' + skill.level + '%'">
+                <mat-icon svgIcon="{{ skill.icon }}" class="skill-icon"></mat-icon>
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="skill-level">
+                  <div 
+                    class="level-bar" 
+                    [style.width.%]="skill.level"
+                    [class]="'level-' + getLevelColor(skill.level)"
+                  ></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

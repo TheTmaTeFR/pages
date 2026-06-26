@@ -1,0 +1,27 @@
+<section class="hero fade-in">
+  <div class="hero-content">
+    <img [src]="profileImage" alt="Thomas Velu" class="profile-image" />
+    
+    <h1>{{ name }}</h1>
+    <h2>{{ title }}</h2>
+    <p class="description">{{ description }}</p>
+    
+    <div class="buttons">
+      @for (button of buttons; track button.label) {
+        <a [routerLink]="button.link" mat-raised-button color="primary">
+          <mat-icon>{{ button.icon }}</mat-icon>
+          {{ button.label }}
+        </a>
+      }
+    </div>
+    
+    <div class="social-links">
+      @for (social of socialLinks; track social.label) {
+        <a [href]="social.link" target="_blank" rel="noopener noreferrer" mat-button color="accent" class="social-link">
+          <mat-icon svgIcon="{{ social.icon }}"></mat-icon>
+          <span class="sr-only">{{ social.label }}</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>

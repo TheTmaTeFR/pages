@@ -1,0 +1,106 @@
+.about {
+  &-card,
+  .experience-card,
+  .education-card {
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    mat-card-header {
+      padding: 1rem 1rem 0;
+
+      mat-card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+    }
+
+    mat-card-content {
+      padding: 0 1rem 1rem;
+    }
+  }
+
+  .about-text {
+    line-height: 1.8;
+    color: #666;
+    white-space: pre-line;
+  }
+
+  mat-list-item {
+    padding: 1rem 0;
+
+    .experience-header,
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      h4 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .company,
+      .school {
+        font-size: 0.9rem;
+        color: #777;
+      }
+    }
+
+    .period {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .description {
+      margin: 0.5rem 0 0;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    mat-divider {
+      margin: 1rem 0 0;
+    }
+  }
+}
+
+/* Dark Theme */
+.dark-theme .about {
+  .about-card,
+  .experience-card,
+  .education-card {
+    background: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    mat-card-content {
+      color: #e0e0e0;
+    }
+  }
+
+  .about-text {
+    color: #a0a0a0;
+  }
+
+  mat-list-item {
+    .experience-header,
+    .education-card {
+      .company,
+      .school {
+        color: #a0a0a0;
+      }
+    }
+
+    .period {
+      color: #a0a0a0;
+    }
+
+    .description {
+      color: #b0b0b0;
+    }
+
+    mat-divider {
+      background: #333;
+    }
+  }
+}

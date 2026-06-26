@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="footer">
+  <div class="footer-content">
+    <span class="copyright">
+      &copy; {{ currentYear }} Thomas Velu. Tous droits réservés.
+    </span>
+    <div class="social-links">
+      @for (social of socialLinks; track social.label) {
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer" mat-icon-button>
+          <mat-icon svgIcon="{{ social.icon }}"></mat-icon>
+          <span class="sr-only">{{ social.label }}</span>
+        </a>
+      }
+    </div>
+  </div>
+</mat-toolbar>

@@ -1,55 +1,197 @@
-@import "primeicons/primeicons.css";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+/* Global Styles */
+@use '@angular/material' as mat;
 
-:root {
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Cormorant Garamond', serif;
-  --gold-subtle: #c19a6b;
-  --cream: #fdfaf5;
-  --text-main: #2f2f2f;
+// Define custom themes
+$light-primary: mat.define-palette(mat.$green-palette, 500, 700, 900);
+$light-accent: mat.define-palette(mat.$green-palette, 700, 900, A700);
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+    ),
+    typography: mat.define-typography-config(),
+  )
+);
+
+$dark-primary: mat.define-palette(mat.$green-palette, 400, 600, 800);
+$dark-accent: mat.define-palette(mat.$green-palette, 600, 800, A400);
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+    ),
+    typography: mat.define-typography-config(),
+  )
+);
+
+// Apply themes
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+  @include mat.core();
+}
+
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+  @include mat.core();
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--cream);
-  color: var(--text-main);
-  font-family: var(--font-body);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1,
-h2,
-h3,
-.p-card-title,
-.p-button {
-  font-family: var(--font-heading);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.light-theme {
+  background-color: #f0f0f0;
+  color: #333333;
 }
 
-.p-card {
-  border: 1px solid var(--gold-subtle);
+.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Links */
+a {
+  color: mat.get-color-from-palette($light-primary, 500);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: mat.get-color-from-palette($light-primary, 700);
+  }
+}
+
+.dark-theme a {
+  color: mat.get-color-from-palette($dark-primary, 400);
+
+  &:hover {
+    color: mat.get-color-from-palette($dark-primary, 600);
+  }
+}
+
+/* Cards */
+.mat-card {
   background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px 0;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
 }
 
-.p-button {
-  background: var(--gold-subtle);
-  border: none;
-  color: white;
-  transition: background 0.3s ease;
+.dark-theme .mat-card {
+  background: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.p-button:hover {
-  background: #a67c52;
+/* Buttons */
+.mat-raised-button {
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes fadeInUp {
+/* Toolbar */
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .mat-toolbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Chips */
+.mat-chip {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
   }
 }

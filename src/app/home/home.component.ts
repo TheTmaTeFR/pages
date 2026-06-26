@@ -1,17 +1,27 @@
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, effect, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import { ButtonModule } from 'primeng/button';
+import { NavbarComponent } from '../shared/components/navbar/navbar.component';
+import { HeroComponent } from '../shared/components/hero/hero.component';
+import { ProjectsComponent } from '../shared/components/projects/projects.component';
+import { SkillsComponent } from '../shared/components/skills/skills.component';
+import { AboutComponent } from '../shared/components/about/about.component';
+import { ContactComponent } from '../shared/components/contact/contact.component';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 
 @Component({
   selector: 'home',
-  imports: [CommonModule, ButtonModule, RouterLink, TranslatePipe],
+  standalone: true,
+  imports: [
+    CommonModule,
+    NavbarComponent,
+    HeroComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    AboutComponent,
+    ContactComponent,
+    FooterComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-
-  name = signal('Thomas VELU');
-
-}
+export class HomeComponent {}
