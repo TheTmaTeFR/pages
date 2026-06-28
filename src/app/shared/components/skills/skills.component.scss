@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use '/theme' as theme;
+@use '/theme-colors' as theme;
 
 .skills {
   &-container {
@@ -13,8 +13,8 @@
     h3 {
       font-size: 1.3rem;
       margin-bottom: 1rem;
-      color: mat.get-color-from-palette(theme.$light-primary, 700);
-      border-bottom: 2px solid mat.get-color-from-palette(theme.$light-primary, 200);
+      color: var(--mat-sys-primary);
+      border-bottom: 2px solid var(--mat-sys-primary-container);
       padding-bottom: 0.5rem;
     }
 
@@ -44,7 +44,7 @@
         font-size: 1.5rem;
         height: 24px;
         width: 24px;
-        color: mat.get-color-from-palette(theme.$light-primary, 500);
+        color: var(--mat-sys-primary);
       }
 
       .skill-name {
@@ -66,15 +66,15 @@
         }
 
         .level-primary {
-          background: mat.get-color-from-palette(theme.$light-primary, 500);
+          background: var(--mat-sys-primary);
         }
 
         .level-accent {
-          background: mat.get-color-from-palette(theme.$light-accent, 500);
+          background: var(--mat-sys-primary);
         }
 
         .level-warn {
-          background: mat.get-color-from-palette(mat.$red-palette, 500);
+          background: var(--mat-sys-primary);
         }
       }
     }
@@ -85,8 +85,8 @@
 .dark-theme .skills {
   .skill-category {
     h3 {
-      color: mat.get-color-from-palette(theme.$dark-primary, 400);
-      border-bottom-color: mat.get-color-from-palette(theme.$dark-primary, 800);
+      color: var(--mat-sys-primary);
+      border-bottom-color: var(--mat-sys-on-primary-container);
     }
 
     .skill-item {
@@ -94,7 +94,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
       .skill-icon {
-        color: mat.get-color-from-palette(theme.$dark-primary, 400);
+        color: var(--mat-sys-primary);
       }
 
       .skill-name {
@@ -105,15 +105,15 @@
         background: #333;
 
         .level-primary {
-          background: mat.get-color-from-palette(theme.$dark-primary, 400);
+          background: var(--mat-sys-primary);
         }
 
         .level-accent {
-          background: mat.get-color-from-palette(theme.$dark-accent, 400);
+          background: var(--mat-sys-primary);
         }
 
         .level-warn {
-          background: mat.get-color-from-palette(mat.$red-palette, 400);
+          background: var(--mat-sys-primary);
         }
       }
     }
