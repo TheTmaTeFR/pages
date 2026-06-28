@@ -1,7 +1,7 @@
 /* Global Styles */
 @use 'sass:meta';
 @use '@angular/material' as mat;
-@use 'theme.scss' as theme;
+@use 'theme' as theme;
 
 // Apply themes
 .light-theme {
