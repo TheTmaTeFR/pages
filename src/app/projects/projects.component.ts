@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedProjectsComponent } from '../shared/components/projects/projects.component';
+import { ProjectsComponent } from '../shared/components/projects/projects.component';
 
 @Component({
   selector: 'projects',
   standalone: true,
-  imports: [CommonModule, SharedProjectsComponent],
+  imports: [CommonModule, ProjectsComponent],
   template: '<app-projects></app-projects>',
   styles: '',
 })
