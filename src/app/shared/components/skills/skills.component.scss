@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use '../../../_theme' as theme;
 
 .skills {
   &-container {
@@ -12,8 +13,8 @@
     h3 {
       font-size: 1.3rem;
       margin-bottom: 1rem;
-      color: mat.get-color-from-palette($light-primary, 700);
-      border-bottom: 2px solid mat.get-color-from-palette($light-primary, 200);
+      color: mat.get-color-from-palette(theme.$light-primary, 700);
+      border-bottom: 2px solid mat.get-color-from-palette(theme.$light-primary, 200);
       padding-bottom: 0.5rem;
     }
 
@@ -43,7 +44,7 @@
         font-size: 1.5rem;
         height: 24px;
         width: 24px;
-        color: mat.get-color-from-palette($light-primary, 500);
+        color: mat.get-color-from-palette(theme.$light-primary, 500);
       }
 
       .skill-name {
@@ -65,11 +66,11 @@
         }
 
         .level-primary {
-          background: mat.get-color-from-palette($light-primary, 500);
+          background: mat.get-color-from-palette(theme.$light-primary, 500);
         }
 
         .level-accent {
-          background: mat.get-color-from-palette($light-accent, 500);
+          background: mat.get-color-from-palette(theme.$light-accent, 500);
         }
 
         .level-warn {
@@ -84,8 +85,8 @@
 .dark-theme .skills {
   .skill-category {
     h3 {
-      color: mat.get-color-from-palette($dark-primary, 400);
-      border-bottom-color: mat.get-color-from-palette($dark-primary, 800);
+      color: mat.get-color-from-palette(theme.$dark-primary, 400);
+      border-bottom-color: mat.get-color-from-palette(theme.$dark-primary, 800);
     }
 
     .skill-item {
@@ -93,7 +94,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
       .skill-icon {
-        color: mat.get-color-from-palette($dark-primary, 400);
+        color: mat.get-color-from-palette(theme.$dark-primary, 400);
       }
 
       .skill-name {
@@ -104,11 +105,11 @@
         background: #333;
 
         .level-primary {
-          background: mat.get-color-from-palette($dark-primary, 400);
+          background: mat.get-color-from-palette(theme.$dark-primary, 400);
         }
 
         .level-accent {
-          background: mat.get-color-from-palette($dark-accent, 400);
+          background: mat.get-color-from-palette(theme.$dark-accent, 400);
         }
 
         .level-warn {

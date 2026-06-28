@@ -1,39 +1,16 @@
 /* Global Styles */
+@use 'sass:meta';
 @use '@angular/material' as mat;
-
-// Define custom themes
-$light-primary: mat.define-palette(mat.$green-palette, 500, 700, 900);
-$light-accent: mat.define-palette(mat.$green-palette, 700, 900, A700);
-$light-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $light-primary,
-      accent: $light-accent,
-    ),
-    typography: mat.define-typography-config(),
-  )
-);
-
-$dark-primary: mat.define-palette(mat.$green-palette, 400, 600, 800);
-$dark-accent: mat.define-palette(mat.$green-palette, 600, 800, A400);
-$dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $dark-primary,
-      accent: $dark-accent,
-    ),
-    typography: mat.define-typography-config(),
-  )
-);
+@use '_theme' as theme;
 
 // Apply themes
 .light-theme {
-  @include mat.all-component-themes($light-theme);
+  @include mat.all-component-themes(theme.$light-theme);
   @include mat.core();
 }
 
 .dark-theme {
-  @include mat.all-component-themes($dark-theme);
+  @include mat.all-component-themes(theme.$dark-theme);
   @include mat.core();
 }
 
@@ -80,20 +57,20 @@ h3 {
 
 /* Links */
 a {
-  color: mat.get-color-from-palette($light-primary, 500);
+  color: mat.get-color-from-palette(theme.$light-primary, 500);
   text-decoration: none;
   transition: color 0.3s ease;
 
   &:hover {
-    color: mat.get-color-from-palette($light-primary, 700);
+    color: mat.get-color-from-palette(theme.$light-primary, 700);
   }
 }
 
 .dark-theme a {
-  color: mat.get-color-from-palette($dark-primary, 400);
+  color: mat.get-color-from-palette(theme.$dark-primary, 400);
 
   &:hover {
-    color: mat.get-color-from-palette($dark-primary, 600);
+    color: mat.get-color-from-palette(theme.$dark-primary, 600);
   }
 }
 

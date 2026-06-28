@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use '../../../_theme' as theme;
 
 .hero {
   text-align: center;
@@ -38,7 +39,7 @@
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid mat.get-color-from-palette($light-primary, 500);
+    border: 4px solid mat.get-color-from-palette(theme.$light-primary, 500);
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
 
@@ -115,7 +116,7 @@
   }
 
   .profile-image {
-    border-color: mat.get-color-from-palette($dark-primary, 400);
+    border-color: mat.get-color-from-palette(theme.$dark-primary, 400);
   }
 }
 

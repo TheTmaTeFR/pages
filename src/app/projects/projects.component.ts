@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectsComponent } from '../shared/components/projects/projects.component';
+import { SharedProjectsComponent } from '../shared/components/projects/projects.component';
 
 @Component({
-  selector: 'projects',
+  selector: 'app-projects-page',
   standalone: true,
-  imports: [CommonModule, ProjectsComponent],
+  imports: [CommonModule, SharedProjectsComponent],
   template: '<app-projects></app-projects>',
   styles: '',
 })
-export class ProjectsComponent {}
+export class ProjectsPageComponent {}
